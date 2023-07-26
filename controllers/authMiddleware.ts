@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-const AUTH_KEY:string ="LqA[3br%H{Am1r2aFmXx_=Z1r1";
+const AUTH_KEY:string =process.env.ROUTE_AUTH_STRING ?? "";
 
 const authMiddleWare = async (req:Request, res:Response,next:NextFunction) =>{
     const authKey = req.headers.authorization;

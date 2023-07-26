@@ -8,8 +8,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-const AUTH_KEY = "LqA[3br%H{Am1r2aFmXx_=Z1r1";
+const AUTH_KEY = (_a = process.env.ROUTE_AUTH_STRING) !== null && _a !== void 0 ? _a : "";
 const authMiddleWare = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const authKey = req.headers.authorization;
     if (!authKey || authKey !== AUTH_KEY) {
