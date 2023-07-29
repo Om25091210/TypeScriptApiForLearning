@@ -138,4 +138,4 @@ const deleteBook=async(req:Request,res:Response,next:NextFunction)=>{
         }); 
     }
 };
-export default { getBooks, getBook, createBook, updateBook };
+export default { getBooks, getBook, createBook, updateBook, deleteBook };

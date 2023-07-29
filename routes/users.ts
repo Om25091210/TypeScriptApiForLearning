@@ -9,11 +9,12 @@ router.get("/users",user_controllers.getUsers);
 router.get("/user/:email",user_controllers.getUser);
 router.put("/update/:email",user_controllers.updateUser);
 router.post("/new_user",user_controllers.createUser);
-router.delete("/delete/:email",user_controllers.deleteUser);
+router.delete("/delete_user/:email",user_controllers.deleteUser);
 
 //router for Books
 router.get("/books",book_controllers.getBooks);
 router.get("/book/:name/:author?/:edition?",book_controllers.getBook);
 router.post("/new_book",book_controllers.createBook);
 router.put("/update_book",book_controllers.updateBook);
+router.delete("/delete_book",book_controllers.deleteBook);
 export default router
