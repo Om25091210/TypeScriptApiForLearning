@@ -40,7 +40,7 @@ type BooksObj {
   name        String? 
 }
 
-model Books {
+model Books_Inventory {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
   author      String @map("author")
   quantity    Int    @map("quantity")
@@ -48,6 +48,7 @@ model Books {
   edition     Int    @map("edition")
   image       String @map("image")
   name        String @map("name")
+  key         String @map("key") @unique
 }
 
 model IssuedBooks {

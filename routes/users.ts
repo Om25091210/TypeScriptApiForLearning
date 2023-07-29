@@ -1,13 +1,19 @@
 import {Express, Request, Response, NextFunction, Router} from 'express';
-import controllers from "../controllers/users";
-
+import user_controllers from "../controllers/users";
+import book_controllers from "../controllers/books";
 
 const router:Router = Router();
 
-router.get("/users",controllers.getUsers);
-router.get("/user/:email",controllers.getUser);
-router.put("/update/:email",controllers.updateUser);
-router.post("/create",controllers.createUser);
-router.delete("/delete/:email",controllers.deleteUser);
+//routers for Users
+router.get("/users",user_controllers.getUsers);
+router.get("/user/:email",user_controllers.getUser);
+router.put("/update/:email",user_controllers.updateUser);
+router.post("/new_user",user_controllers.createUser);
+router.delete("/delete/:email",user_controllers.deleteUser);
 
+//router for Books
+router.get("/books",book_controllers.getBooks);
+router.get("/book/:name/:author?/:edition?",book_controllers.getBook);
+router.post("/new_book",book_controllers.createBook);
+router.put("/update_book",book_controllers.updateBook);
 export default router
